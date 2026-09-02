@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error del sistema</title>
+  <meta name="theme-color" content="#d4829c">
+  <style>
+    :root {
+      --color-primary: #d4829c;
+      --color-primary-hover: #c06f89;
+      --color-bg: #fdf6f8;
+      --color-text-primary: #2d1f24;
+      --color-text-secondary: #7a6069;
+      --color-error: #c0394f;
+      --color-focus-ring: #d4829c;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
+      background-color: var(--color-bg); 
+      color: var(--color-text-primary); 
+      min-height: 100vh; 
+      display: flex; 
+      flex-direction: column; 
+    }
+    .container {
+      max-width: 480px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 32px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .icon {
+      color: var(--color-error);
+      margin-bottom: 24px;
+    }
+    h1 { font-size: 1.5rem; margin-bottom: 12px; }
+    p { color: var(--color-text-secondary); margin-bottom: 32px; }
+    .actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--color-primary);
+      color: white;
+    }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-text-primary);
+      border: 1px solid var(--color-text-secondary);
+    }
+    .btn-secondary:hover { background: rgba(212, 130, 156, 0.08); }
+    .btn:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <div class="icon" aria-hidden="true">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+        <line x1="12" y1="9" x2="12" y2="13"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+    </div>
+    <h1>Ha ocurrido un error</h1>
+    <p>Lo sentimos, algo salió mal. Por favor intenta nuevamente.</p>
+    <div class="actions">
+      <button onclick="window.location.reload()" class="btn btn-primary" type="button">Reintentar</button>
+      <a href="/" class="btn btn-secondary">Volver al inicio</a>
+    </div>
+  </main>
+</body>
+</html>
