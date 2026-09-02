@@ -17,22 +17,6 @@ const ApiClient = (() => {
       links: [
         {
           id: 1,
-          title: "Cognitive Profile of Turner Syndrome (PMC)",
-          year: "2009",
-          url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3114458/",
-          icon: "brain",
-          active: true
-        },
-        {
-          id: 2,
-          title: "Hearing Loss in Turner Syndrome (PMC Review)",
-          year: "2014",
-          url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9535484/",
-          icon: "article",
-          active: true
-        },
-        {
-          id: 3,
           title: "Cohorte Pediátrica de Síndrome de Turner - SciELO Chile",
           year: "2023",
           url: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S2452-60532023000500606&lng=es&nrm=iso",
@@ -40,7 +24,7 @@ const ApiClient = (() => {
           active: true
         },
         {
-          id: 4,
+          id: 2,
           title: "Genetics & Clinical Management of Turner Syndrome",
           year: "2023",
           url: "https://pm.amegroups.org/article/view/7267/html",
@@ -48,7 +32,7 @@ const ApiClient = (() => {
           active: true
         },
         {
-          id: 5,
+          id: 3,
           title: "Mecanismos Moleculares en Embriones 45,X0 - SciELO México",
           year: "2024",
           url: "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0187-53372024000100026",
@@ -56,7 +40,7 @@ const ApiClient = (() => {
           active: true
         },
         {
-          id: 6,
+          id: 4,
           title: "Turner Syndrome - StatPearls (NCBI Bookshelf)",
           year: "2024",
           url: "https://www.ncbi.nlm.nih.gov/books/NBK554621/",
@@ -90,9 +74,7 @@ const ApiClient = (() => {
       try {
         const res = await fetchWithTimeout('/api/links', 3000);
         if (res && res.success) return res;
-      } catch (_) {
-        // En entorno estático (como GitHub Pages), /api/links dará 404
-      }
+      } catch (_) {}
 
       // 2. Intentar archivo JSON estático relativo
       try {
